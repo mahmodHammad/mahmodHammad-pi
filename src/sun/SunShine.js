@@ -1,8 +1,11 @@
 import * as THREE from 'three';
 // import MathEx from './js-util/MathEx';
 
-import vs from './glsl/sunshine.vs';
-import fs from './glsl/sunshine.fs';
+import raw from "raw.macro";
+
+const vs = raw('./glsl/sunshine.vs')
+const fs = raw('./glsl/sunshine.fs')
+
 
 export default class SunShine extends THREE.Mesh {
   constructor() {

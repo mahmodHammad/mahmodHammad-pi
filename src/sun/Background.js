@@ -1,8 +1,9 @@
 import * as THREE from 'three';
 // import MathEx from './js-util/MathEx';
+import raw from "raw.macro";
 
-import vs from './glsl/background.vs';
-import fs from './glsl/background.fs';
+const vs = raw('./glsl/background.vs')
+const fs = raw('./glsl/background.fs')
 
 export default class Background extends THREE.Mesh {
   constructor() {

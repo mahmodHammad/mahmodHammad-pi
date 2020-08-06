@@ -1,8 +1,10 @@
 import * as THREE from 'three';
 // import MathEx from './js-util/MathEx';
 
-import vs from './glsl/core.vs';
-import fs from './glsl/core.fs';
+import raw from "raw.macro";
+
+const vs = raw('./glsl/core.vs')
+const fs = raw('./glsl/core.fs')
 
 export default class Core extends THREE.Mesh {
   constructor() {
