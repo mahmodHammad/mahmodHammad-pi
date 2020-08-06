@@ -1,5 +1,8 @@
 body{
+    margin: 0;
+    padding: 0;
 background-color: #fbfbfb;
+overflow-y: hidden;
 }
 a{
     color:inherit ;
@@ -7,4 +10,13 @@ a{
 }
 .MuiPagination-ul{
     justify-content: center;
+}
+.content{
+    /* background-color: #aaa;
+    padding-top:80 ;
+    min-height: 100vh; */
+}
+#three{
+    /* width: 95vw; */
+    /* height: 95vh; */
 }
