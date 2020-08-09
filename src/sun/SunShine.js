@@ -13,8 +13,27 @@ export default class SunShine extends THREE.Mesh {
     const geometry = new THREE.RingBufferGeometry(4, 24, 64);
 
     // Define Material
-    const material = new THREE.MeshBasicMaterial({
-      color:"red"
+    const material = new THREE.ShaderMaterial({
+
+      fragmentShader: `
+      uniform vec3 colorA; 
+      uniform vec3 colorB; 
+      varying vec3 vUv;
+
+      void main() {
+        gl_FragColor = vec4(mix(vec3(1.0,0.3,0.0), colorB, vUv.z), 1.0);
+      }
+      ` ,
+      vertexShader:`
+      varying vec3 vUv; 
+  
+      void main() {
+        vUv = position; 
+  
+        vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
+        gl_Position = projectionMatrix * modelViewPosition; 
+      }
+    `
     });
 
     // Create Object3D
