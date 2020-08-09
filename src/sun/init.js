@@ -4,11 +4,7 @@ import sleep from './js-util/sleep';
 import PromiseTextureLoader from './PromiseTextureLoader';
 
 import Sun from './Sun';
-import Core from './Core';
-import Shell from './Shell';
-import Points from './Points';
 import SunShine from './SunShine';
-import Background from './Background';
 
 export default async function() {
   // ==========
@@ -38,11 +34,7 @@ export default async function() {
   // Define unique variables
   //
   const sun = new Sun();
-  const core = new Core();
-  const shell = new Shell();
-  const points = new Points();
   const sunShine = new SunShine();
-  const bg = new Background();
 
   let textures;
 
@@ -52,9 +44,6 @@ export default async function() {
   const render = () => {
     const time = clock.getDelta();
     sun.update(time);
-    core.update(time);
-    shell.update(time);
-    points.update(time);
     sunShine.update(time);
     renderer.render(scene, camera);
   };
@@ -129,18 +118,12 @@ export default async function() {
     textures[1].wrapS = THREE.RepeatWrapping;
     textures[1].wrapT = THREE.RepeatWrapping;
 
-    core.start(textures[0], textures[1]);
-    shell.start(textures[0], textures[1]);
     sunShine.start(textures[2]);
   }
 
-  sun.add(core);
-  sun.add(shell);
 
   scene.add(sun);
-  scene.add(points);
   scene.add(sunShine);
-  scene.add(bg);
 
   // preloader.classList.add('is-hidden');
   await sleep(200);

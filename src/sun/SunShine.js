@@ -13,20 +13,8 @@ export default class SunShine extends THREE.Mesh {
     const geometry = new THREE.RingBufferGeometry(4, 24, 64);
 
     // Define Material
-    const material = new THREE.RawShaderMaterial({
-      uniforms: {
-        time: {
-          type: 'f',
-          value: 0
-        },
-        texture: {
-          type: 't',
-          value: null
-        },
-      },
-      vertexShader: vs,
-      fragmentShader: fs,
-      transparent: true,
+    const material = new THREE.MeshBasicMaterial({
+      color:"red"
     });
 
     // Create Object3D
@@ -35,9 +23,9 @@ export default class SunShine extends THREE.Mesh {
     this.name = 'SunShine';
   }
   start(texture) {
-    this.material.uniforms.texture.value = texture;
+    // this.material.uniforms.texture.value = texture;
   }
   update(time) {
-    this.material.uniforms.time.value += time;
+    // this.material.uniforms.time.value += time;
   }
 }
