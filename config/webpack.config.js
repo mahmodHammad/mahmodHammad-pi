@@ -452,6 +452,13 @@ module.exports = function(webpackEnv) {
                 },
               }),
             },
+            {
+                test: /\.(glsl|frag|vert)$/,
+                use: [
+                    require.resolve('raw-loader'),
+                    require.resolve('glslify-loader'),
+                ]
+            },
             // Opt-in support for SASS (using .scss or .sass extensions).
             // By default we support SASS Modules with the
             // extensions .module.scss or .module.sass

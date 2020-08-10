@@ -54,8 +54,18 @@ uniform sampler2D texture;
 varying vec3 vPosition;
 varying vec2 vUv;
 
-#pragma glslify: calcRotateMat3 = require(glsl-matrix/calcRotateMat3);
-#pragma glslify: convertHsvToRgb = require(glsl-util/convertHsvToRgb);
+vec3 convertHsvToRgb(vec3 c) {
+  vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+  vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+  return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+}
+mat3 calcRotateMat3(float radian) {
+  return mat3(
+    cos(radian), -sin(radian), 0.0,
+    sin(radian), cos(radian), 0.0,
+    0.0, 0.0, 1.0
+  );
+}
 
 void main() {
 vec2 p = vUv * 2.0 - 1.0;
