@@ -7,7 +7,8 @@ import React, { Component } from "react";
 import init from "../sun/init"
 class Cat extends Component {
   componentDidMount() {
-    init()  }
+    init() 
+  }
 
   // clean up to prevent memory leak
   componentWillUnmount() {
@@ -16,7 +17,10 @@ class Cat extends Component {
   }
 
   render() {
-    return <div id="three" />;
+    return <div className="brandContainer">
+      <h2 className="brand">PI</h2>
+      <p  className="glow slogan">Enlighten Your Way</p>
+    </div>;
   }
 }
 

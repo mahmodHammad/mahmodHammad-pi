@@ -19,19 +19,19 @@ import {
       marginBottom: "0",
       position: "absolute",
       width: "100%",
-      paddingTop: "10px",
+      paddingTop: "0px",
       zIndex: "1029",
       color: grayColor[7],
       border: "0",
       borderRadius: "3px",
-      padding: "10px 0",
+      padding: "0px 0",
       transition: "all 150ms ease 0s",
-      minHeight: "50px",
+      minHeight: "30px",
       display: "block"
     },
     container: {
       ...container,
-      minHeight: "50px"
+      minHeight: "30px"
     },
     flex: {
       flex: 1

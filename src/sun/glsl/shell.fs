@@ -27,7 +27,7 @@ void main() {
   vec3 hsv = vec3(
     opacity * 0.1 + 0.03,
     0.95 - opacity * 0.7,
-    opacity * 0.4 + 0.8
+    opacity * 0.4 + 0.7
     );
   vec3 rgb = convertHsvToRgb(hsv);
 

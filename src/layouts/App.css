@@ -1,22 +1,64 @@
-body{
-    margin: 0;
-    padding: 0;
-background-color: #fbfbfb;
-overflow-y: hidden;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fbfbfb;
+  overflow-y: hidden;
 }
-a{
-    color:inherit ;
-    text-decoration: none;
+a {
+  color: inherit;
+  text-decoration: none;
 }
-.MuiPagination-ul{
-    justify-content: center;
+.MuiPagination-ul {
+  justify-content: center;
 }
-.content{
-    /* background-color: #aaa;
+.content {
+  /* background-color: #aaa;
     padding-top:80 ;
     min-height: 100vh; */
 }
-#three{
-    /* width: 95vw; */
-    /* height: 95vh; */
+#three {
+  /* width: 95vw; */
+  /* height: 95vh; */
 }
+
+.makeStyles-appBar-1 {
+  background-color: #fff1 !important;
+}
+.brandContainer {
+  font-family: Homenaje, sans-serif;
+
+  z-index: 1000;
+  color: #fbfbfb;
+  position: fixed;
+  bottom: 22px;
+  left: 20px;
+  letter-spacing: 0.11em;
+}
+.brand {
+  font-size: 62.48px;
+  margin: 0 0 0.075em -0.05em;
+  font-weight: 100;
+  line-height: 1;
+}
+
+.slogan {
+  font-size: 21px;
+  color: #fff;
+}
+
+.glow {
+  text-shadow: 0 0 5px #fffa, 0 0 10px #fff, 0 0 15px #4473b6, 0 0 20px #4473b6,
+    0 0 25px #4473b6, 0 0 30px #4473b6, 0 0 35px #4473b6;
+    /* animation: glow 1s ease-in-out infinite alternate; */
+}
+/* 
+@keyframes glow {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #4473b6, 0 0 20px #4473b6, 0 0 25px #4473b6, 0 0 30px #4473b6, 0 0 35px #4473b6;
+    }
+    to {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4473b6, 0 0 40px #4473b6, 0 0 50px #4473b6, 0 0 60px #4473b6, 0 0 70px #4473b6;
+    }
+  }
+  
+   */

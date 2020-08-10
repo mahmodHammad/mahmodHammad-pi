@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css"
 import { Cat } from "../components/Cat";
 
@@ -11,11 +11,11 @@ export default function Admin() {
 
   return (
     <div>
-      {/* <Navbar color="primary" /> */}
+      <Navbar color="info" />
       <div className="content">
-      <Cat></Cat>
+      <Cat/>
+
     </div>
-      
     </div>
   );
 }

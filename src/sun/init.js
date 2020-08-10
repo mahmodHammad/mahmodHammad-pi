@@ -1,13 +1,13 @@
 import * as THREE from 'three';
-import debounce from './js-util/debounce';
 import sleep from './js-util/sleep'; 
 import Sun from './Sun';
 import Core from './Core';
 import Shell from './Shell';
-import Points from './Points';
 import SunShine from './SunShine';
 import Background from './Background';
 import PromiseTextureLoader from "./PromiseTextureLoader"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
 const img1= require("./core.png")
 const img2= require("./core_normal.png")
 const img3= require("./sunshine.png")
@@ -16,22 +16,60 @@ export default async function() {
   // ==========
   // Define common variables
   //
+
+
+  
+let width = window.innerWidth;
+let height = window.innerHeight;
+
+const renderer = new THREE.WebGLRenderer({
+  alpha: true,
+  antialias: true,
+});
+
+
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(
+  75, // fov = field of view
+  width / height, // aspect ratio
+  0.1, // near plane
+  1000 // far plane
+);
+
+
+camera.aspect = 3 / 2;
+camera.setFocalLength(50);
+camera.position.set(0, 0, 60);
+
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.maxDistance=90
+controls.minDistance=40
+controls.maxPolarAngle=Math.PI/2
+controls.minPolarAngle=Math.PI/2
+controls.enableKeys=false
+controls.enablePan=false
+// controls.maxPolarAngle = 3.13 / 2;
+const clock = new THREE.Clock({
+  autoStart: false
+});
+
+
+
+
   const resolution = new THREE.Vector2();
 
 
-  const renderer = new THREE.WebGLRenderer({
-    alpha: true,
-    antialias: true,
-  });
+  // const renderer = new THREE.WebGLRenderer({
+  //   alpha: true,
+  //   antialias: true,
+  // });
   document.body.appendChild(renderer.domElement);
 
-  renderer.setPixelRatio(window.devicePixelRatio);
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera();
+  // renderer.setPixelRatio(window.devicePixelRatio);
   const cameraResolution = new THREE.Vector2();
-  const clock = new THREE.Clock({
-    autoStart: false
-  });
+
 
   // For the preloader.
   // const preloader = document.querySelector('.p-preloader');
@@ -42,7 +80,6 @@ export default async function() {
   const sun = new Sun();
   const core = new Core();
   const shell = new Shell();
-  const points = new Points();
   const sunShine = new SunShine();
   const bg = new Background();
   let textures;
@@ -55,7 +92,6 @@ export default async function() {
     sun.update(time);
     core.update(time);
     shell.update(time);
-    points.update(time);
     sunShine.update(time);
     renderer.render(scene, camera);
   };
@@ -90,30 +126,18 @@ export default async function() {
     resizeCamera();
     renderer.setSize(resolution.x, resolution.y);
   };
-  const on = () => {
-    window.addEventListener('blur', () => {
-      // this window is inactive.
-      clock.stop();
-    });
-    window.addEventListener('focus', () => {
-      // this window is inactive.
-      clock.start();
-    });
-    window.addEventListener('resize', debounce(resizeWindow, 100));
-  };
-
+  
+  controls.addEventListener("change",(e)=>{
+    // shell.lookAt(camera.position)
+    sunShine.lookAt(camera.position)
+  })
   // ==========
   // Initialize
   //
   renderer.setClearColor(0xeeeeee, 1.0);
-
-  camera.aspect = 3 / 2;
-  camera.far = 1000;
-  camera.setFocalLength(50);
-  camera.position.set(0, 0, 50);
-  camera.lookAt(new THREE.Vector3());
-
-  on();
+  
+  
+  window.addEventListener('resize', resizeWindow);
   resizeWindow();
 
   
@@ -143,7 +167,6 @@ export default async function() {
   sun.add(shell);
 
   scene.add(sun);
-  scene.add(points);
   scene.add(sunShine);
   scene.add(bg);
 
