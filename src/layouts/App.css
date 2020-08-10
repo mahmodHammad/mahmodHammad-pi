@@ -29,7 +29,7 @@ a {
 
   z-index: 1000;
   color: #fbfbfb;
-  position: absolute;
+  position: fixed;
   bottom: 22px;
   left: 20px;
   letter-spacing: 0.11em;
@@ -47,11 +47,11 @@ a {
 }
 
 .glow {
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #4473b6, 0 0 20px #4473b6,
+  text-shadow: 0 0 5px #fffa, 0 0 10px #fff, 0 0 15px #4473b6, 0 0 20px #4473b6,
     0 0 25px #4473b6, 0 0 30px #4473b6, 0 0 35px #4473b6;
-    animation: glow 1s ease-in-out infinite alternate;
+    /* animation: glow 1s ease-in-out infinite alternate; */
 }
-
+/* 
 @keyframes glow {
     from {
       text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #4473b6, 0 0 20px #4473b6, 0 0 25px #4473b6, 0 0 30px #4473b6, 0 0 35px #4473b6;
@@ -61,4 +61,4 @@ a {
     }
   }
   
-  
+   */
