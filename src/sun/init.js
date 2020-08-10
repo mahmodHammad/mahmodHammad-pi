@@ -37,8 +37,14 @@ const camera = new THREE.PerspectiveCamera(
   1000 // far plane
 );
 
-camera.position.set(50, 50, -50);
+camera.position.set(60, 60, -60);
 const controls = new OrbitControls(camera, renderer.domElement);
+controls.maxDistance=90
+controls.minDistance=30
+controls.maxPolarAngle=Math.PI/2
+controls.minPolarAngle=Math.PI/2
+controls.enableKeys=false
+controls.enablePan=false
 // controls.maxPolarAngle = 3.13 / 2;
 const clock = new THREE.Clock({
   autoStart: false

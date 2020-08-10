@@ -10,7 +10,7 @@ const fs = raw('./glsl/sunshine.fs')
 export default class SunShine extends THREE.Mesh {
   constructor() {
     // Define Geometry
-    const geometry = new THREE.RingBufferGeometry(4, 24, 64);
+    const geometry = new THREE.RingBufferGeometry(4, 22, 24);
 
     // Define Material
     const material = new THREE.RawShaderMaterial({

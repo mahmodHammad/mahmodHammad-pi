@@ -33,9 +33,9 @@ void main() {
   float opacity = opacityIn * 0.7 + opacityOut * 0.1 + opacityRay * texColor.r;
 
   vec3 hsv = vec3(
-    opacity * 0.1 + 0.9,
+    opacity * 0.1 + 0.98,
     1.0 - opacity * 0.8,
-    opacity * 0.4 + 0.8
+    opacity * 0.4 + 0.5
     );
   vec3 rgb = convertHsvToRgb(hsv);
 
