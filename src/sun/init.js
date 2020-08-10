@@ -4,7 +4,15 @@ import sleep from './js-util/sleep';
 import PromiseTextureLoader from './PromiseTextureLoader';
 
 import Sun from './Sun';
+import Core from './Core';
+import Shell from './Shell';
+import Points from './Points';
 import SunShine from './SunShine';
+import Background from './Background';
+
+const img1= require("./core.png")
+const img2= require("./core_normal.png")
+const img3= require("./sunshine.png")
 
 export default async function() {
   // ==========
@@ -34,8 +42,11 @@ export default async function() {
   // Define unique variables
   //
   const sun = new Sun();
+  const core = new Core();
+  const shell = new Shell();
+  const points = new Points();
   const sunShine = new SunShine();
-
+  const bg = new Background();
   let textures;
 
   // ==========
@@ -44,6 +55,9 @@ export default async function() {
   const render = () => {
     const time = clock.getDelta();
     sun.update(time);
+    core.update(time);
+    shell.update(time);
+    points.update(time);
     sunShine.update(time);
     renderer.render(scene, camera);
   };
@@ -93,7 +107,7 @@ export default async function() {
   // ==========
   // Initialize
   //
-  renderer.setClearColor(0x888888, 1.0);
+  renderer.setClearColor(0xeeeeee, 1.0);
 
   camera.aspect = 3 / 2;
   camera.far = 1000;
@@ -104,26 +118,25 @@ export default async function() {
   on();
   resizeWindow();
 
-  await Promise.all([
-    PromiseTextureLoader('./img/sketch/sun/core.png'),
-    PromiseTextureLoader('./img/sketch/sun/core_normal.png'),
-    PromiseTextureLoader('./img/sketch/sun/sunshine.png'),
-  ]).then(response => {
-    textures = response;
-  }).catch(err=>{console.log("errrrrrrrrrrrror",err)});
-
+ 
   if (textures) {
-    textures[0].wrapS = THREE.RepeatWrapping;
-    textures[0].wrapT = THREE.RepeatWrapping;
-    textures[1].wrapS = THREE.RepeatWrapping;
-    textures[1].wrapT = THREE.RepeatWrapping;
+    img1.wrapS = THREE.RepeatWrapping;
+    img1.wrapT = THREE.RepeatWrapping;
+    img2.wrapS = THREE.RepeatWrapping;
+    img2.wrapT = THREE.RepeatWrapping;
 
-    sunShine.start(textures[2]);
+    core.start(img1, img2);
+    shell.start(img1, img2);
+    sunShine.start(img3);
   }
 
+  sun.add(core);
+  sun.add(shell);
 
   scene.add(sun);
+  scene.add(points);
   scene.add(sunShine);
+  scene.add(bg);
 
   // preloader.classList.add('is-hidden');
   await sleep(200);
