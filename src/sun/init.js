@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import debounce from './js-util/debounce';
 import sleep from './js-util/sleep'; 
 import Sun from './Sun';
 import Core from './Core';
@@ -8,6 +7,8 @@ import Points from './Points';
 import SunShine from './SunShine';
 import Background from './Background';
 import PromiseTextureLoader from "./PromiseTextureLoader"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
 const img1= require("./core.png")
 const img2= require("./core_normal.png")
 const img3= require("./sunshine.png")
@@ -16,22 +17,46 @@ export default async function() {
   // ==========
   // Define common variables
   //
+
+
+  
+let width = window.innerWidth;
+let height = window.innerHeight;
+
+const renderer = new THREE.WebGLRenderer();
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(
+  75, // fov = field of view
+  width / height, // aspect ratio
+  0.1, // near plane
+  1000 // far plane
+);
+
+camera.position.set(50, 50, -50);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.maxPolarAngle = 3.13 / 2;
+const clock = new THREE.Clock({
+  autoStart: false
+});
+
+
+
+
+
+
   const resolution = new THREE.Vector2();
 
 
-  const renderer = new THREE.WebGLRenderer({
-    alpha: true,
-    antialias: true,
-  });
+  // const renderer = new THREE.WebGLRenderer({
+  //   alpha: true,
+  //   antialias: true,
+  // });
   document.body.appendChild(renderer.domElement);
 
-  renderer.setPixelRatio(window.devicePixelRatio);
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera();
+  // renderer.setPixelRatio(window.devicePixelRatio);
   const cameraResolution = new THREE.Vector2();
-  const clock = new THREE.Clock({
-    autoStart: false
-  });
+
 
   // For the preloader.
   // const preloader = document.querySelector('.p-preloader');
@@ -99,7 +124,7 @@ export default async function() {
       // this window is inactive.
       clock.start();
     });
-    window.addEventListener('resize', debounce(resizeWindow, 100));
+    window.addEventListener('resize', resizeWindow);
   };
 
   // ==========

@@ -1,22 +1,26 @@
-body{
-    margin: 0;
-    padding: 0;
-background-color: #fbfbfb;
-overflow-y: hidden;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fbfbfb;
+  overflow-y: hidden;
 }
-a{
-    color:inherit ;
-    text-decoration: none;
+a {
+  color: inherit;
+  text-decoration: none;
 }
-.MuiPagination-ul{
-    justify-content: center;
+.MuiPagination-ul {
+  justify-content: center;
 }
-.content{
-    /* background-color: #aaa;
+.content {
+  /* background-color: #aaa;
     padding-top:80 ;
     min-height: 100vh; */
 }
-#three{
-    /* width: 95vw; */
-    /* height: 95vh; */
+#three {
+  /* width: 95vw; */
+  /* height: 95vh; */
+}
+
+.makeStyles-appBar-1 {
+  background-color: #fff1 !important;
 }
