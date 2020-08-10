@@ -1,15 +1,13 @@
 import * as THREE from 'three';
 import debounce from './js-util/debounce';
-import sleep from './js-util/sleep';
-import PromiseTextureLoader from './PromiseTextureLoader';
-
+import sleep from './js-util/sleep'; 
 import Sun from './Sun';
 import Core from './Core';
 import Shell from './Shell';
 import Points from './Points';
 import SunShine from './SunShine';
 import Background from './Background';
-
+import PromiseTextureLoader from "./PromiseTextureLoader"
 const img1= require("./core.png")
 const img2= require("./core_normal.png")
 const img3= require("./sunshine.png")
@@ -118,17 +116,28 @@ export default async function() {
   on();
   resizeWindow();
 
- 
-  if (textures) {
-    img1.wrapS = THREE.RepeatWrapping;
-    img1.wrapT = THREE.RepeatWrapping;
-    img2.wrapS = THREE.RepeatWrapping;
-    img2.wrapT = THREE.RepeatWrapping;
+  
+  await Promise.all([
+    PromiseTextureLoader(img1),
+    PromiseTextureLoader(img2),
+    PromiseTextureLoader(img3),
+  ]).then(response => {
+    textures = response;
+  });
 
-    core.start(img1, img2);
-    shell.start(img1, img2);
-    sunShine.start(img3);
+  if (textures) {
+    textures[0].wrapS = THREE.RepeatWrapping;
+    textures[0].wrapT = THREE.RepeatWrapping;
+    textures[1].wrapS = THREE.RepeatWrapping;
+    textures[1].wrapT = THREE.RepeatWrapping;
+
+    core.start(textures[0], textures[1]);
+    shell.start(textures[0], textures[1]);
+    sunShine.start(textures[2]);
   }
+
+
+  
 
   sun.add(core);
   sun.add(shell);

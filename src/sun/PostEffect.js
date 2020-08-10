@@ -1,8 +1,11 @@
 import * as THREE from 'three';
 
-import vs from './glsl/postEffect.vs';
-import fs from './glsl/postEffect.fs';
 
+import raw from "raw.macro";
+
+const vs = raw('./glsl/postEffect.vs')
+const fs = raw('./glsl/postEffect.fs')
+ 
 export default class PostEffect extends THREE.Mesh {
   constructor(texture) {
     // Define Geometry

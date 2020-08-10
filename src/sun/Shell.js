@@ -1,8 +1,11 @@
 import * as THREE from 'three';
-import MathEx from 'js-util/MathEx';
 
-import vs from './glsl/shell.vs';
-import fs from './glsl/shell.fs';
+import raw from "raw.macro";
+
+const vs = raw('./glsl/shell.vs')
+const fs = raw('./glsl/shell.fs')
+
+
 
 export default class Shell extends THREE.Mesh {
   constructor() {

@@ -9,8 +9,42 @@ uniform float time;
 varying vec3 vColor;
 varying float vOpacity;
 
-#pragma glslify: convertHsvToRgb = require(glsl-util/convertHsvToRgb);
-#pragma glslify: calcRotateMat4 = require(glsl-matrix/calcRotateMat4);
+vec3 convertHsvToRgb(vec3 c) {
+  vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+  vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+  return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+}
+
+mat4 calcRotateMat4Z(float radian) {
+  return mat4(
+    cos(radian), -sin(radian), 0.0, 0.0,
+    sin(radian), cos(radian), 0.0, 0.0,
+    0.0, 0.0, 1.0, 0.0,
+    0.0, 0.0, 0.0, 1.0
+  );
+}
+
+mat4 calcRotateMat4Y(float radian) {
+  return mat4(
+    cos(radian), 0.0, sin(radian), 0.0,
+    0.0, 1.0, 0.0, 0.0,
+    -sin(radian), 0.0, cos(radian), 0.0,
+    0.0, 0.0, 0.0, 1.0
+  );
+}
+
+mat4 calcRotateMat4X(float radian) {
+  return mat4(
+    1.0, 0.0, 0.0, 0.0,
+    0.0, cos(radian), -sin(radian), 0.0,
+    0.0, sin(radian), cos(radian), 0.0,
+    0.0, 0.0, 0.0, 1.0
+  );
+}
+
+mat4 calcRotateMat4(vec3 radian) {
+  return calcRotateMat4X(radian.x) * calcRotateMat4Y(radian.y) * calcRotateMat4Z(radian.z);
+}
 
 const float duration = 3.0;
 
