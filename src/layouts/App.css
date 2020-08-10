@@ -24,3 +24,28 @@ a {
 .makeStyles-appBar-1 {
   background-color: #fff1 !important;
 }
+.brandContainer {
+  font-family: Homenaje, sans-serif;
+
+  z-index: 1000;
+  color: #fbfbfb;
+  position: absolute;
+  bottom: 22px;
+  left: 20px;
+  letter-spacing: 0.11em;
+}
+.brand {
+  font-size: 62.48px;
+  margin: 0 0 0.075em -0.05em;
+  font-weight: 100;
+  line-height: 1;
+}
+
+.slogan {
+  font-size: 20px;
+  color: #fff;
+}
+
+.glow {
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+}

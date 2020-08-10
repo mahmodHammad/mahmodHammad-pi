@@ -37,10 +37,15 @@ const camera = new THREE.PerspectiveCamera(
   1000 // far plane
 );
 
-camera.position.set(60, 60, -60);
+
+camera.aspect = 3 / 2;
+camera.setFocalLength(50);
+camera.position.set(0, 0, 60);
+
+
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.maxDistance=90
-controls.minDistance=30
+controls.minDistance=40
 controls.maxPolarAngle=Math.PI/2
 controls.minPolarAngle=Math.PI/2
 controls.enableKeys=false
@@ -49,7 +54,6 @@ controls.enablePan=false
 const clock = new THREE.Clock({
   autoStart: false
 });
-
 
 
 
@@ -122,18 +126,7 @@ const clock = new THREE.Clock({
     resizeCamera();
     renderer.setSize(resolution.x, resolution.y);
   };
-  const on = () => {
-    window.addEventListener('blur', () => {
-      // this window is inactive.
-      clock.stop();
-    });
-    window.addEventListener('focus', () => {
-      // this window is inactive.
-      clock.start();
-    });
-    window.addEventListener('resize', resizeWindow);
-  };
-
+  
   controls.addEventListener("change",(e)=>{
     // shell.lookAt(camera.position)
     sunShine.lookAt(camera.position)
@@ -142,14 +135,9 @@ const clock = new THREE.Clock({
   // Initialize
   //
   renderer.setClearColor(0xeeeeee, 1.0);
-
-  camera.aspect = 3 / 2;
-  camera.far = 1000;
-  camera.setFocalLength(50);
-  camera.position.set(0, 0, 50);
-  camera.lookAt(new THREE.Vector3());
-
-  on();
+  
+  
+  window.addEventListener('resize', resizeWindow);
   resizeWindow();
 
   
