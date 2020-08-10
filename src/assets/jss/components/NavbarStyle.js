@@ -58,7 +58,7 @@ import {
       ...defaultBoxShadow
     },
     info: {
-      backgroundColor: infoColor[0],
+      backgroundColor: "#fff1",
       color: whiteColor,
       ...defaultBoxShadow
     },

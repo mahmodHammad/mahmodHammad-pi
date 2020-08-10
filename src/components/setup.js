@@ -33,8 +33,6 @@ const sceneSetup = () => {
   renderer.setSize(width, height);
   document.body.appendChild(renderer.domElement);
   window.addEventListener("resize", handleWindowResize);
-
-  // displayCoards();
 };
 
 function render() {
