@@ -3,7 +3,6 @@ import sleep from './js-util/sleep';
 import Sun from './Sun';
 import Core from './Core';
 import Shell from './Shell';
-import Points from './Points';
 import SunShine from './SunShine';
 import Background from './Background';
 import PromiseTextureLoader from "./PromiseTextureLoader"
@@ -23,7 +22,12 @@ export default async function() {
 let width = window.innerWidth;
 let height = window.innerHeight;
 
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({
+  alpha: true,
+  antialias: true,
+});
+
+
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -35,11 +39,10 @@ const camera = new THREE.PerspectiveCamera(
 
 camera.position.set(50, 50, -50);
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.maxPolarAngle = 3.13 / 2;
+// controls.maxPolarAngle = 3.13 / 2;
 const clock = new THREE.Clock({
   autoStart: false
 });
-
 
 
 
@@ -67,7 +70,6 @@ const clock = new THREE.Clock({
   const sun = new Sun();
   const core = new Core();
   const shell = new Shell();
-  const points = new Points();
   const sunShine = new SunShine();
   const bg = new Background();
   let textures;
@@ -80,7 +82,6 @@ const clock = new THREE.Clock({
     sun.update(time);
     core.update(time);
     shell.update(time);
-    points.update(time);
     sunShine.update(time);
     renderer.render(scene, camera);
   };
@@ -127,6 +128,10 @@ const clock = new THREE.Clock({
     window.addEventListener('resize', resizeWindow);
   };
 
+  controls.addEventListener("change",(e)=>{
+    // shell.lookAt(camera.position)
+    sunShine.lookAt(camera.position)
+  })
   // ==========
   // Initialize
   //
@@ -168,7 +173,6 @@ const clock = new THREE.Clock({
   sun.add(shell);
 
   scene.add(sun);
-  scene.add(points);
   scene.add(sunShine);
   scene.add(bg);
 

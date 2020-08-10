@@ -33,7 +33,7 @@ void main() {
   float opacity = opacityIn * 0.7 + opacityOut * 0.1 + opacityRay * texColor.r;
 
   vec3 hsv = vec3(
-    opacity * 0.12 + 0.98,
+    opacity * 0.1 + 0.9,
     1.0 - opacity * 0.8,
     opacity * 0.4 + 0.8
     );

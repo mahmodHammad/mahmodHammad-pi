@@ -31,7 +31,7 @@ export default class SunShine extends THREE.Mesh {
 
     // Create Object3D
     super(geometry, material);
-    this.position.z =   -2;
+    this.position.z =   0;
     this.name = 'SunShine';
   }
   start(texture) {
