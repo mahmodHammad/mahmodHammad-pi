@@ -1,67 +1,57 @@
-import * as THREE from 'three';
-import sleep from './js-util/sleep'; 
-import Sun from './Sun';
-import Core from './Core';
-import Shell from './Shell';
-import SunShine from './SunShine';
-import Background from './Background';
-import PromiseTextureLoader from "./PromiseTextureLoader"
+import * as THREE from "three";
+import sleep from "./js-util/sleep";
+import Sun from "./Sun";
+import Core from "./Core";
+import Shell from "./Shell";
+import SunShine from "./SunShine";
+import Background from "./Background";
+import PromiseTextureLoader from "./PromiseTextureLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-const img1= require("./core.png")
-const img2= require("./core_normal.png")
-const img3= require("./sunshine.png")
+const img1 = require("./core.png");
+const img2 = require("./core_normal.png");
+const img3 = require("./sunshine.png");
 
-export default async function() {
+export default async function () {
   // ==========
   // Define common variables
   //
 
+  let width = window.innerWidth;
+  let height = window.innerHeight;
 
-  
-let width = window.innerWidth;
-let height = window.innerHeight;
+  const renderer = new THREE.WebGLRenderer({
+    alpha: true,
+    antialias: true,
+  });
 
-const renderer = new THREE.WebGLRenderer({
-  alpha: true,
-  antialias: true,
-});
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(
+    75, // fov = field of view
+    width / height, // aspect ratio
+    0.1, // near plane
+    1000 // far plane
+  );
 
+  camera.aspect = 3 / 2;
+  camera.setFocalLength(50);
+  camera.position.set(0, 0, 60);
 
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.maxDistance = 90;
+  controls.minDistance = 40;
+  controls.maxPolarAngle = Math.PI / 2;
+  controls.minPolarAngle = Math.PI / 2;
+  controls.enableKeys = false;
+  controls.enablePan = false;
+  controls.enableZoom = false;
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(
-  75, // fov = field of view
-  width / height, // aspect ratio
-  0.1, // near plane
-  1000 // far plane
-);
-
-
-camera.aspect = 3 / 2;
-camera.setFocalLength(50);
-camera.position.set(0, 0, 60);
-
-
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.maxDistance=90
-controls.minDistance=40
-controls.maxPolarAngle=Math.PI/2
-controls.minPolarAngle=Math.PI/2
-controls.enableKeys=false
-controls.enablePan=false
-controls.enableZoom=false
-
-// controls.maxPolarAngle = 3.13 / 2;
-const clock = new THREE.Clock({
-  autoStart: false
-});
-
-
-
+  // controls.maxPolarAngle = 3.13 / 2;
+  const clock = new THREE.Clock({
+    autoStart: false,
+  });
 
   const resolution = new THREE.Vector2();
-
 
   // const renderer = new THREE.WebGLRenderer({
   //   alpha: true,
@@ -69,9 +59,8 @@ const clock = new THREE.Clock({
   // });
   document.body.appendChild(renderer.domElement);
 
-  renderer.setPixelRatio(0.1);
+  // renderer.setPixelRatio(0.1);
   const cameraResolution = new THREE.Vector2();
-
 
   // For the preloader.
   // const preloader = document.querySelector('.p-preloader');
@@ -104,13 +93,13 @@ const clock = new THREE.Clock({
   const resizeCamera = () => {
     if (resolution.x > resolution.y) {
       cameraResolution.set(
-        (resolution.x >= 1200) ? 1200 : resolution.x,
-        (resolution.x >= 1200) ? 800 : resolution.x * 0.66,
+        resolution.x >= 1200 ? 1200 : resolution.x,
+        resolution.x >= 1200 ? 800 : resolution.x * 0.66
       );
     } else {
       cameraResolution.set(
-        ((resolution.y >= 1200) ? 800 : resolution.y * 0.66) * 0.6,
-        ((resolution.y >= 1200) ? 1200 : resolution.y) * 0.6,
+        (resolution.y >= 1200 ? 800 : resolution.y * 0.66) * 0.6,
+        (resolution.y >= 1200 ? 1200 : resolution.y) * 0.6
       );
     }
     camera.setViewOffset(
@@ -128,31 +117,56 @@ const clock = new THREE.Clock({
     resizeCamera();
     renderer.setSize(resolution.x, resolution.y);
   };
-  
-  controls.addEventListener("change",(e)=>{
+
+  controls.addEventListener("change", (e) => {
     // shell.lookAt(camera.position)
-    sunShine.lookAt(camera.position)
-  })
+    sunShine.lookAt(camera.position);
+  });
   // ==========
   // Initialize
   //
   renderer.setClearColor(0xeeeeee, 1.0);
-  
-  
-  window.addEventListener('resize', resizeWindow);
-  resizeWindow();
-window.addEventListener("scroll",e=>{
-  // console.log()
 
-  scene.position.setX(window.scrollY/100)
-    console.log(window.scrollY)
-})
-  
+  window.addEventListener("resize", resizeWindow);
+  resizeWindow();
+
+  const maxheight = 100;
+
+  // sun.position.setZ(-60)
+
+  window.addEventListener("scroll", (e) => {
+    console.log(window.scrollY);
+
+    // sun.position.setX(window.scrollY/300)
+    // sun.position.setY(window.scrollY/200)
+    // if(window.scrollY/10 <60){
+    //   sun.position.setZ(-60+window.scrollY/10)
+
+    //  }
+
+    sunShine.visible = false;
+    sunShine.position.setX(window.scrollY / 200);
+    sunShine.position.setY(window.scrollY / 400);
+    sunShine.position.setZ(-window.scrollY / 40);
+
+    sun.position.setX(window.scrollY / 200);
+    sun.position.setY(window.scrollY / 400);
+    sun.position.setZ(-window.scrollY / 40);
+
+    if (window.scrollY > 1816) {
+      sunShine.visible = false;
+    } else {
+      sunShine.visible = true;
+    }
+    console.log(window.scrollY);
+
+  });
+
   await Promise.all([
     PromiseTextureLoader(img1),
     PromiseTextureLoader(img2),
     PromiseTextureLoader(img3),
-  ]).then(response => {
+  ]).then((response) => {
     textures = response;
   });
 
@@ -166,9 +180,6 @@ window.addEventListener("scroll",e=>{
     shell.start(textures[0], textures[1]);
     sunShine.start(textures[2]);
   }
-
-
-  
 
   sun.add(core);
   sun.add(shell);

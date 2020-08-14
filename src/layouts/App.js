@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Cat } from "../components/Cat";
-
+import CustomInput from "../components/Form/CustomInput"
 // @material-ui/core components
 import Navbar from "../components/Navbar/Navbar.js";
 
@@ -15,6 +15,7 @@ export default function Admin() {
         <div className="headerContainer">
           <div className="brandContainer">
           <h2 className="brand">PI</h2>
+            <CustomInput labelText="hey"  formControlProps=""/>
             <p className="glow slogan">Enlighten Your Way</p>
             <p className="glow slogan">Enlighten Your Way</p>
             <p className="glow slogan">Enlighten Your Way</p>
@@ -44,7 +45,112 @@ export default function Admin() {
             <p className="glow slogan">Enlighten Your Way</p>
             <p className="glow slogan">Enlighten Your Way</p>
             <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
             <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>   <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            <p className="glow slogan">Enlighten Your Way</p>
+            
           </div>
           
         </div>
