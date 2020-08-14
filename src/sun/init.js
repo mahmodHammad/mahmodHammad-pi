@@ -132,7 +132,8 @@ export default async function () {
 
   const maxheight = 100;
 
-  // sun.position.setZ(-60)
+  sun.position.setZ(-60)
+  sunShine.position.setZ(-60)
 
   window.addEventListener("scroll", (e) => {
     console.log(window.scrollY);
@@ -144,20 +145,20 @@ export default async function () {
 
     //  }
 
-    sunShine.visible = false;
-    sunShine.position.setX(window.scrollY / 200);
-    sunShine.position.setY(window.scrollY / 400);
-    sunShine.position.setZ(-window.scrollY / 40);
+    sunShine.visible = true;
+    // sunShine.position.setX(window.scrollY / 200);
+    // sunShine.position.setY(window.scrollY / 400);
+    sunShine.position.setZ(-60 + window.scrollY / 40);
 
-    sun.position.setX(window.scrollY / 200);
-    sun.position.setY(window.scrollY / 400);
-    sun.position.setZ(-window.scrollY / 40);
+    // sun.position.setX(window.scrollY / 200);
+    // sun.position.setY(window.scrollY / 400);
+    sun.position.setZ(-60 + window.scrollY / 40);
 
-    if (window.scrollY > 1816) {
-      sunShine.visible = false;
-    } else {
-      sunShine.visible = true;
-    }
+    // if (window.scrollY > 1700) {
+    //   sunShine.visible = false;
+    // } else {
+    //   sunShine.visible = true;
+    // }
     console.log(window.scrollY);
 
   });

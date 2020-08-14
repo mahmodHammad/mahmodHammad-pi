@@ -26,12 +26,17 @@ a {
 }
 .headerContainer {
   font-family: Homenaje, sans-serif;
-
-  border: 1px solid red;
+  position: fixed;
+  left: 0;
+  bottom:10px;
+  width: 100%;
+  border-top: 1px solid #ccc3;
+  padding: 20px;
   z-index: 1000;
   color: #fbfbfb;
   letter-spacing: 0.11em;
-  margin-top: 70vh;
+  /* margin-top: calc(100vh - 55px - 108px) ; */
+  /* margin-left: 25px; */
 }
 
 .brandContainer {
@@ -74,4 +79,11 @@ canvas {
 
 h1 {
   color: #8f0;
+}
+
+.addheight{
+  height: 60vh;
+  margin-top: 60px;
+  padding-bottom: 110px;
+  /* overflow: auto; */
 }

@@ -13,11 +13,12 @@ import {
   
   const headerStyle = () => ({
     appBar: {
+
       backgroundColor: "transparent",
       boxShadow: "none",
       borderBottom: "0",
       marginBottom: "0",
-      position: "absolute",
+      position: "fixed",
       width: "100%",
       paddingTop: "0px",
       zIndex: "1029",
