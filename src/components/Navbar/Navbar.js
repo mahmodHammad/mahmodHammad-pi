@@ -18,7 +18,7 @@ const useStyles = makeStyles(styles);
 export default function Header(props) {
     const classes = useStyles();
     function makeBrand() {
-      var name= "Logo";
+      var name= "PI EG";
     
       return name;
     }

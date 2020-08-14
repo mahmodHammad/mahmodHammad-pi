@@ -17,10 +17,7 @@ class Cat extends Component {
   }
 
   render() {
-    return <div className="brandContainer">
-      <h2 className="brand">PI</h2>
-      <p  className="glow slogan">Enlighten Your Way</p>
-    </div>;
+    return <div onClick={f=>console.log("clickccccc")}></div>
   }
 }
 
