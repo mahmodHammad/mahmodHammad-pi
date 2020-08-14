@@ -13,7 +13,6 @@ import {
   
   const headerStyle = () => ({
     appBar: {
-
       backgroundColor: "transparent",
       boxShadow: "none",
       borderBottom: "0",
@@ -59,7 +58,7 @@ import {
       ...defaultBoxShadow
     },
     info: {
-      backgroundColor: "#fff1",
+      backgroundColor: "#0008",
       color: whiteColor,
       ...defaultBoxShadow
     },

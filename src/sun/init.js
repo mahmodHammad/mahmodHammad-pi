@@ -135,6 +135,10 @@ export default async function () {
   sun.position.setZ(-60)
   sunShine.position.setZ(-60)
 
+  
+  sun.position.setY(1)
+  sunShine.position.setY(1)
+
   window.addEventListener("scroll", (e) => {
     console.log(window.scrollY);
 
@@ -159,7 +163,7 @@ export default async function () {
     // } else {
     //   sunShine.visible = true;
     // }
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
 
   });
 

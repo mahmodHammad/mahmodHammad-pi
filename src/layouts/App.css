@@ -22,19 +22,20 @@ a {
 }
 
 .makeStyles-appBar-1 {
-  background-color: #fff1 !important;
+  /* background-color: #fff1 !important; */
 }
 .headerContainer {
+  background-color: #0008;
   font-family: Homenaje, sans-serif;
   position: fixed;
   left: 0;
-  bottom:10px;
+  bottom:0;
   width: 100%;
-  border-top: 1px solid #ccc3;
   padding: 20px;
   z-index: 1000;
   color: #fbfbfb;
   letter-spacing: 0.11em;
+  box-shadow: 0 -10px 20px -12px rgba(0, 0, 0, 0.42), 0 -3px 20px 0px rgba(0, 0, 0, 0.12), 0 -8px 10px -5px rgba(0, 0, 0, 0.2);
   /* margin-top: calc(100vh - 55px - 108px) ; */
   /* margin-left: 25px; */
 }
@@ -78,12 +79,12 @@ canvas {
 }
 
 h1 {
-  color: #8f0;
+  color: #aaa;
 }
 
 .addheight{
-  height: 67vh;
+  /* height: 67vh; */
   margin-top: 60px;
   padding-bottom: 110px;
-  overflow: auto;
+  /* overflow: auto; */
 }
