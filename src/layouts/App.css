@@ -82,8 +82,8 @@ h1 {
 }
 
 .addheight{
-  height: 60vh;
+  height: 67vh;
   margin-top: 60px;
   padding-bottom: 110px;
-  /* overflow: auto; */
+  overflow: auto;
 }
