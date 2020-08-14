@@ -19,7 +19,7 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.set(50, 50, -50);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.maxPolarAngle = 3.13 / 2;
-
+controls.enableZoom=false
 const handleWindowResize = () => {
   width = window.innerWidth;
   height = window.innerHeight;

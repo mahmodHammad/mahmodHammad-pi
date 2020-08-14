@@ -50,6 +50,8 @@ controls.maxPolarAngle=Math.PI/2
 controls.minPolarAngle=Math.PI/2
 controls.enableKeys=false
 controls.enablePan=false
+controls.enableZoom=false
+
 // controls.maxPolarAngle = 3.13 / 2;
 const clock = new THREE.Clock({
   autoStart: false
@@ -67,7 +69,7 @@ const clock = new THREE.Clock({
   // });
   document.body.appendChild(renderer.domElement);
 
-  // renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setPixelRatio(0.1);
   const cameraResolution = new THREE.Vector2();
 
 
@@ -139,7 +141,12 @@ const clock = new THREE.Clock({
   
   window.addEventListener('resize', resizeWindow);
   resizeWindow();
+window.addEventListener("scroll",e=>{
+  // console.log()
 
+  scene.position.setX(window.scrollY/100)
+    console.log(window.scrollY)
+})
   
   await Promise.all([
     PromiseTextureLoader(img1),
