@@ -1,90 +1,69 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #fbfbfb;
-  overflow-y: scroll;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-.MuiPagination-ul {
-  justify-content: center;
-}
-.content {
-  /* background-color: #aaa;
-    padding-top:80 ;
-    min-height: 100vh; */
-}
-#three {
-  /* width: 95vw; */
-  /* height: 95vh; */
-}
-
-.makeStyles-appBar-1 {
-  /* background-color: #fff1 !important; */
-}
-.headerContainer {
-  background-color: #0008;
-  font-family: Homenaje, sans-serif;
-  position: fixed;
-  left: 0;
-  bottom:0;
+/*App css*/
+.holder {
+  height: 100vh;
   width: 100%;
-  padding: 20px;
-  z-index: 1000;
-  color: #fbfbfb;
-  letter-spacing: 0.11em;
-  box-shadow: 0 -10px 20px -12px rgba(0, 0, 0, 0.42), 0 -3px 20px 0px rgba(0, 0, 0, 0.12), 0 -8px 10px -5px rgba(0, 0, 0, 0.2);
-  /* margin-top: calc(100vh - 55px - 108px) ; */
-  /* margin-left: 25px; */
+  background: linear-gradient(-45deg, #fff, #aaa, #777, #555, #333, #111);
+  background-size: 500vw 500vh;
+  transition-duration: 1s;
+}
+.style0 {
+  background-position: 0% 0%;
+}
+.style1 {
+  background-position: 25% 25%;
+}
+.style2 {
+  background-position: 50% 50%;
+}
+.style3 {
+  background-position: 75% 75%;
+}
+.style4 {
+  background-position: 100% 100%;
+}
+.shine0 {
+  animation: shine0 2s linear forwards;
 }
 
-.brandContainer {
- 
-}
 
-.brand {
-  font-size: 62.48px;
-  margin: 0 0 0.075em -0.05em;
-  font-weight: 100;
-  line-height: 1;
+/* General CSS code */
+::-webkit-scrollbar {
+  width: 0px;
 }
-
-.slogan {
-  font-size: 21px;
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+.content hr {
+  width: 20%;
+  border-top: 2px solid #fff;
+}
+.content h1 {
   color: #fff;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem 0rem 1.5rem;
 }
 
-.glow {
-  text-shadow: 0 0 5px #fffa, 0 0 10px #fff, 0 0 15px #4473b6, 0 0 20px #4473b6,
-    0 0 25px #4473b6, 0 0 30px #4473b6, 0 0 35px #4473b6;
-  /* animation: glow 1s ease-in-out infinite alternate; */
+.content h4,
+.content p {
+  text-shadow: 0 0 30px #fff;
 }
-/* 
-@keyframes glow {
-    from {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #4473b6, 0 0 20px #4473b6, 0 0 25px #4473b6, 0 0 30px #4473b6, 0 0 35px #4473b6;
-    }
-    to {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4473b6, 0 0 40px #4473b6, 0 0 50px #4473b6, 0 0 60px #4473b6, 0 0 70px #4473b6;
-    }
+.content h4 {
+  padding: 1rem 2rem;
+  color: rgb(230, 230, 230);
+}
+.content p {
+  color: rgb(210, 210, 210);
+  font-size: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+@media only screen and (max-width: 600px) {
+  body,
+  html {
+    font-size: 14px;
   }
-  
-   */
-canvas {
-  position: fixed;
-  top: 0px;
-  z-index: -1 !important;
+  .content hr {
+    width: 50%;
+  }
 }
 
-h1 {
-  color: #aaa;
-}
 
-.addheight{
-  /* height: 67vh; */
-  margin-top: 60px;
-  padding-bottom: 110px;
-  /* overflow: auto; */
-}
