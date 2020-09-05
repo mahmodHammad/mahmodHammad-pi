@@ -7,7 +7,7 @@ import React, { Component } from "react";
 import init from "../sun/init"
 class Cat extends Component {
   componentDidMount() {
-    init() 
+    // init() 
   }
 
   // clean up to prevent memory leak

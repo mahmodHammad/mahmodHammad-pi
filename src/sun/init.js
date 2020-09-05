@@ -132,15 +132,14 @@ export default async function () {
 
   const maxheight = 100;
 
-  sun.position.setZ(-60)
-  sunShine.position.setZ(-60)
+  // sun.position.setZ(-60);
+  // sunShine.position.setZ(-60);
 
-  
-  sun.position.setY(1)
-  sunShine.position.setY(1)
+  // sun.position.setY(1);
+  // sunShine.position.setY(1);
 
   window.addEventListener("scroll", (e) => {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
 
     // sun.position.setX(window.scrollY/300)
     // sun.position.setY(window.scrollY/200)
@@ -150,13 +149,13 @@ export default async function () {
     //  }
 
     sunShine.visible = true;
-    // sunShine.position.setX(window.scrollY / 200);
-    // sunShine.position.setY(window.scrollY / 400);
-    sunShine.position.setZ(-60 + window.scrollY / 40);
+    sunShine.position.setX(window.scrollY / 200);
+    sunShine.position.setY(window.scrollY / 400);
+    // sunShine.position.setY(window.scrollY / 10);
 
-    // sun.position.setX(window.scrollY / 200);
-    // sun.position.setY(window.scrollY / 400);
-    sun.position.setZ(-60 + window.scrollY / 40);
+    sun.position.setX(window.scrollY / 200);
+    // sun.position.setY(1);
+    sun.position.setY(window.scrollY / 400);
 
     // if (window.scrollY > 1700) {
     //   sunShine.visible = false;
@@ -164,7 +163,6 @@ export default async function () {
     //   sunShine.visible = true;
     // }
     // console.log(window.scrollY);
-
   });
 
   await Promise.all([

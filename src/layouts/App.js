@@ -1,9 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Cat } from "../components/Cat";
-import CustomInput from "../components/Form/CustomInput";
 // @material-ui/core components
-import Navbar from "../components/Navbar/Navbar.js";
 
 // function renderlol() {
 //   let tot = [];
@@ -16,35 +13,10 @@ export default function Admin() {
 
   return (
     <div>
-      <Navbar color="info" />
       <div className="content">
-        <Cat />
 
         <div className="addheight">
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
-          {/* put your code here */}
+         
         </div>
 
         <div className="headerContainer">
