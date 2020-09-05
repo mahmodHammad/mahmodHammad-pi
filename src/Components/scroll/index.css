@@ -1,0 +1,33 @@
+.fas {
+    height: auto;
+    width: 5vw;
+    position: absolute;
+    top: 50vh;
+    color: transparent;
+    color: rgb(133, 133, 133);
+    text-shadow: 0 0 15px rgb(105, 105, 105);
+    animation: arrowsAppear 2.2s linear infinite;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  .fa-chevron-left {
+    left: 2vw;
+  }
+  .fa-chevron-right {
+    right: 2vw;
+  }
+  @keyframes arrowsAppear {
+    0% {
+      color: rgb(85, 85, 85);
+      text-shadow: 0 0 15px rgb(105, 105, 105);
+    }
+    50% {
+      color: #fff;
+      text-shadow: 0 0 20px #fff;
+    }
+    100% {
+      color: rgb(85, 85, 85);
+      text-shadow: 0 0 15px rgb(105, 105, 105);
+    }
+  }
+  

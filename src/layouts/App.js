@@ -2,7 +2,9 @@ import React from "react";
 import "./App.css";
 
 import Navbar from "../Components/Navbar/index";
+import Content from "../Components/Content/index"
 import Footer from "../Components/Footer";
+
 export default function Admin() {
 
   return (
@@ -11,6 +13,7 @@ export default function Admin() {
 
 <Navbar/>
 {/* content --start */}
+<Content/>
     {/* Home */}
     {/* About */1}
     {/* Events */}

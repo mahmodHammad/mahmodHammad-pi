@@ -1,0 +1,46 @@
+.content {
+    width: 76vw;
+    margin: 4vh 12vw 5vh 12vw;
+    height: 75vh;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 12px 5px rgb(92, 92, 92);
+    display: grid;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  @media only screen and (max-width: 500px) {
+    .content {
+      min-height: 70vh;
+      height: auto;
+      padding-bottom: 1vh;
+    }
+  }
+  .enter {
+    animation: enter 0.5s 1;
+  }
+  .lightUp {
+    animation: lightUp 1s 1;
+  }
+  
+  @keyframes lightUp {
+    50% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes enter {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
