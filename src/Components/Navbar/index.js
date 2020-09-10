@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import logo from "../../assets/piIcon.png";
-export default function Nav() {
+export default function Nav({ routes, Active, setActive }) {
   const [Open, setOpen] = useState(true);
 
   function handleNavBtnClick() {
@@ -30,18 +30,12 @@ export default function Nav() {
       >
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ">
           {/* Navitems start */}
-          <li class="nav-item">
-            <a class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Events</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Contact</a>
-          </li>
+
+          {Object.keys(routes).map((route) => (
+            <li class="nav-item" onClick={()=>setActive(route)}>
+              <span class={`nav-link ${Active === route?'active':''}`}  >{route}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
