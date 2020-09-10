@@ -28,22 +28,14 @@ export default function Events() {
           </div>
         </div>
 
-        
+       
         <div name="slide-2">
           <div className="eventsM">
-            <h1>Event 2</h1>
+            <h2>Pi Insights</h2>
             <hr />
             <div className="row">
               <div className="col-md-6">
                 <h4>Our Vision</h4>
-                <p>
-                  Our vision is upgrading the students scientifically through
-                  applying innovation, intellectually through cultural awareness
-                </p>
-                <p>
-                  Our vision is upgrading the students scientifically through
-                  applying innovation, intellectually through cultural awareness
-                </p>
                 <p>
                   Our vision is upgrading the students scientifically through
                   applying innovation, intellectually through cultural awareness
@@ -59,6 +51,7 @@ export default function Events() {
             </div>
           </div>
         </div>
+
     
       </div>
     </div>

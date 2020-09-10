@@ -38,7 +38,7 @@
   border-top: 2px solid #fff;
 }
 .eventsM hr{
-  width: 10%;
+  /* width: 10%; */
 
 }
 .content h1 {
@@ -52,7 +52,6 @@
   text-transform: uppercase;
   /* font-size: 2rem; */
   padding: 1rem 3rem 0rem 1.5rem;
-  border-right: 3px solid royalblue;
 
 }
 
