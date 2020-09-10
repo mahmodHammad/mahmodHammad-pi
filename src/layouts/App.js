@@ -12,17 +12,17 @@ import About from "../Components/Content/About/index";
 
 const routes = {
   home: <Home />,
+  about: <About />,
   events: <Events />,
   contact: <Contact />,
-  about: <About />,
 };
 
 export default function Admin() {
   const [Routes, setRoutes] = useState(routes);
-  const [Active, setActive] = useState("home");
+  const [Active, setActive] = useState("events");
 
   return (
-    <div id="holder" className="holder">
+    <div id="holder" className={`holder ${Active}`}>
       {/* {console.log(Home)} */}
 
       <Navbar routes={routes} Active={Active} setActive={setActive} />
@@ -30,7 +30,6 @@ export default function Admin() {
       <Content routes={routes} Active={Active} />
 
       {/* Home */}
-      {/* About */ 1}
       {/* Events */}
       {/* Contect */}
       {/* content --end */}
