@@ -1,54 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { Cat } from "../components/Cat";
 
-// @material-ui/core components
-import Navbar from "../components/Navbar/Navbar.js";
+import Navbar from "../Components/Navbar/index";
+import Content from "../Components/Content/index";
+import Footer from "../Components/Footer";
+
+import Home from "../Components/Content/Home/index";
+import Events from "../Components/Content/Events/index";
+import Contact from "../Components/Content/Contact/index";
+import About from "../Components/Content/About/index";
+
+const routes = {
+  home: <Home />,
+  about: <About />,
+  events: <Events />,
+  contact: <Contact />,
+};
 
 export default function Admin() {
-  return (
-    <div >
-      <Navbar color="info" />
-      <div className="content">
-        <Cat />
+  const [Routes, setRoutes] = useState(routes);
+  const [Active, setActive] = useState("events");
 
-        <div className="headerContainer">
-          <div className="brandContainer">
-          <h2 className="brand">PI</h2>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p> <h2 className="brand">PI</h2>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-            <p className="glow slogan">Enlighten Your Way</p>
-          </div>
-          
-        </div>
-      </div>
+  return (
+    <div id="holder" className={`holder ${Active}`}>
+      {/* {console.log(Home)} */}
+
+      <Navbar routes={routes} Active={Active} setActive={setActive} />
+      {/* content --start */}
+      <Content routes={routes} Active={Active} />
+
+      {/* Home */}
+      {/* Events */}
+      {/* Contect */}
+      {/* content --end */}
+
+      <Footer />
     </div>
   );
+}
+
+{
+  /* <div className="content">
+
+
+        <div className="addheight">
+         
+        </div>
+        <div className="headerContainer">
+          <div className="brandContainer">
+            <h2 className="brand">PI</h2>
+            <p className="glow slogan">Enlighten Your Way</p>
+          </div>
+        </div>
+      </div> */
 }

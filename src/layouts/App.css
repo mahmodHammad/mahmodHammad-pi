@@ -1,77 +1,81 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #fbfbfb;
-  overflow-y: scroll;
+/*App css*/
+.holder {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(45deg, #fff, #aaa, #777, #555, #333, #111);
+  background-size: 500vw 500vh;
+  transition-duration: 1s;
 }
-a {
-  color: inherit;
-  text-decoration: none;
+.home {
+  background-position: 100% 25%;
 }
-.MuiPagination-ul {
-  justify-content: center;
+.events {
+  background-position: 75% 50%;
 }
-.content {
-  /* background-color: #aaa;
-    padding-top:80 ;
-    min-height: 100vh; */
+.contact {
+  background-position: 50% 75%;
 }
-#three {
-  /* width: 95vw; */
-  /* height: 95vh; */
+.about {
+  background-position: 25% 100%;
 }
-
-.makeStyles-appBar-1 {
-  background-color: #fff1 !important;
+.style4 {
+  background-position: 0% 100%;
 }
-.headerContainer {
-  font-family: Homenaje, sans-serif;
-
-  border: 1px solid red;
-  z-index: 1000;
-  color: #fbfbfb;
-  letter-spacing: 0.11em;
-  margin-top: 70vh;
+.shine0 {
+  animation: shine0 2s linear forwards;
 }
 
-.brandContainer {
- 
-}
 
-.brand {
-  font-size: 62.48px;
-  margin: 0 0 0.075em -0.05em;
-  font-weight: 100;
-  line-height: 1;
+/* General CSS code */
+::-webkit-scrollbar {
+  width: 0px;
 }
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+.content hr {
+  width: 20%;
+  border-top: 2px solid #fff;
+}
+.eventsM hr{
+  /* width: 10%; */
 
-.slogan {
-  font-size: 21px;
+}
+.content h1 {
   color: #fff;
+  text-transform: uppercase;
+  padding: 1rem 0rem 0rem 1.5rem;
+}
+.content h2 {
+  color: #fff;
+
+  text-transform: uppercase;
+  /* font-size: 2rem; */
+  padding: 1rem 3rem 0rem 1.5rem;
+
 }
 
-.glow {
-  text-shadow: 0 0 5px #fffa, 0 0 10px #fff, 0 0 15px #4473b6, 0 0 20px #4473b6,
-    0 0 25px #4473b6, 0 0 30px #4473b6, 0 0 35px #4473b6;
-  /* animation: glow 1s ease-in-out infinite alternate; */
+.content h4,
+.content p {
+  text-shadow: 0 0 30px #fff;
 }
-/* 
-@keyframes glow {
-    from {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #4473b6, 0 0 20px #4473b6, 0 0 25px #4473b6, 0 0 30px #4473b6, 0 0 35px #4473b6;
-    }
-    to {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4473b6, 0 0 40px #4473b6, 0 0 50px #4473b6, 0 0 60px #4473b6, 0 0 70px #4473b6;
-    }
+.content h4 {
+  padding: 1rem 2rem;
+  color: rgb(230, 230, 230);
+}
+.content p {
+  color: rgb(210, 210, 210);
+  font-size: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+@media only screen and (max-width: 600px) {
+  body,
+  html {
+    font-size: 14px;
   }
-  
-   */
-canvas {
-  position: fixed;
-  top: 0px;
-  z-index: -1 !important;
+  .content hr {
+    width: 50%;
+  }
 }
 
-h1 {
-  color: #8f0;
-}
+
