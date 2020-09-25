@@ -1,8 +1,12 @@
+.eventInfo {
+  border:1px solid white;
+  border-radius:2rem;
+  margin: auto 5px;
+}
 .slider {
   width: 100%;
   text-align: center;
   overflow-x: hidden;
- 
   padding: 0px 0;
 }
 

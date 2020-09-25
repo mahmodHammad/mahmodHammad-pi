@@ -1,8 +1,11 @@
 import React from "react";
+import InputForms from "../../Register/Contact";
 export default function Contact() {
   return (
     <div>
-      <h1>this is Contact</h1>
+      <InputForms />
     </div>
   );
 }
+
+// BYEEEEEEEEEEE
