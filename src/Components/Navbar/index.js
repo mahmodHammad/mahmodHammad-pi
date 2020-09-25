@@ -12,7 +12,7 @@ export default function Nav({ routes, Active, setActive }) {
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <a className="navbar-brand">
-        <img src={logo} />
+        <img class="logo" src={logo} />
       </a>
       <button
         onClick={handleNavBtnClick}

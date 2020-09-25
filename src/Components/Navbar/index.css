@@ -1,7 +1,7 @@
 .navbar {
   box-shadow: 0 0 7px 3px rgb(80, 80, 80);
 }
-img {
+.logo {
   border: 1px solid #bebebe;
   border-radius: 50%;
   box-shadow: 0 0 15px #ddd;

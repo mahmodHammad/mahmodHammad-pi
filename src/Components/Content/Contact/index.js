@@ -1,5 +1,5 @@
 import React from "react";
-import InputForms from "../../Register/index";
+import InputForms from "../../Register/Contact";
 export default function Contact() {
   return (
     <div>
@@ -7,3 +7,5 @@ export default function Contact() {
     </div>
   );
 }
+
+// BYEEEEEEEEEEE
